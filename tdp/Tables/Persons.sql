@@ -8,7 +8,8 @@
     [DateOfBirth] DATE NOT NULL, 
     [DateInput] DATETIME NULL Constraint [DF_Persons_DateInput] Default (getdate()), 
     [Email] NVARCHAR(400) NULL,
-    [Phone] VARCHAR(15) NULL
+    [Phone] VARCHAR(15) NULL, 
+    [test] NCHAR(10) NULL
 )
 
 GO
@@ -101,3 +102,12 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'Persons',
     @level2type = N'COLUMN',
     @level2name = N'Phone'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'test',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'Persons',
+    @level2type = N'COLUMN',
+    @level2name = N'test'
