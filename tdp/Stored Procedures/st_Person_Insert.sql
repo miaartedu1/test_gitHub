@@ -3,7 +3,7 @@ CREATE PROCEDURE [dbo].[sp_Persons_Insert]
 	@Surname nvarchar(50),
 	@Name nvarchar(50),
 	@Patronymic nvarchar(50) = NULL,
-	@DateOfBirth date = NULL
+	@DateOfBirth date
 AS
 Begin
 	SET NOCOUNT ON;

@@ -4,9 +4,9 @@
     [Surname] NVARCHAR(50) NOT NULL, 
     [Name] NVARCHAR(50) NOT NULL, 
     [Patronymic] VARCHAR(50) NULL, 
-    [DateOfBirth] DATE NULL, 
-    [DateInput] DATETIME NULL Constraint [DF_Persons_DateInput] Default (getdate()), 
     [DateCorrection] DATETIME NOT NULL Constraint [DF_Persons_DateCorrection]  DEFAULT (getdate())
+    [DateOfBirth] DATE NOT NULL, 
+    [DateInput] DATETIME NULL Constraint [DF_Persons_DateInput] Default (getdate())
 )
 
 GO
