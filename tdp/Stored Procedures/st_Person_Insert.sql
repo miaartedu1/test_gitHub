@@ -4,6 +4,7 @@ CREATE PROCEDURE [dbo].[st_Persons_Insert]
 	@Name nvarchar(50),
 	@Patronymic nvarchar(50) = NULL,
 	@DateOfBirth date,
+	@Email nvarchar(50) = NULL,
 	@Phone varchar(15) = NULL	
 AS
 Begin
@@ -15,6 +16,7 @@ Begin
 					[Name],
 					[Patronymic],
 					[DateOfBirth],
+					[Email],
 					[Phone])
 		Values
 						(@Id,
@@ -22,5 +24,6 @@ Begin
 						@Name,
 						@Patronymic,
 						@DateOfBirth,
+						@Email,
 						@Phone);
 END
