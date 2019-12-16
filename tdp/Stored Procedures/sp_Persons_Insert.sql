@@ -1,10 +1,10 @@
-CREATE PROCEDURE [dbo].[st_Persons_Insert]
+CREATE PROCEDURE [dbo].[sp_Persons_Insert]
 	@id int = 0, --Идентификатор лица
 	@Surname nvarchar(50),
 	@Name nvarchar(50),
 	@Patronymic nvarchar(50) = NULL,
 	@DateOfBirth date,
-	@Email nvarchar(50) = NULL,
+	@Email nvarchar(400) = NULL,
 	@Phone varchar(15) = NULL	
 AS
 Begin

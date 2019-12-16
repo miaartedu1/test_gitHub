@@ -1,10 +1,10 @@
-CREATE PROCEDURE [dbo].[st_Persons_Update]
+CREATE PROCEDURE [dbo].[sp_Persons_Update]
 	@id int = 0, --Идентификатор лица
 	@Surname nvarchar(50),
 	@Name nvarchar(50),
 	@Patronymic nvarchar(50),
 	@DateOfBirth date,
-	@Email nvarchar(50),
+	@Email nvarchar(400),
 	@Phone varchar(15)
 AS
 Begin
@@ -16,7 +16,7 @@ Begin
 				[Patronymic] = @Patronymic,
 				[DateOfBirth] = @DateOfBirth,
 				[DateCorrection] = GETDATE(),
-				[Phone] = @Phone,
-				[Email] = @Email
+				[Email] = @Email,
+				[Phone] = @Phone
 	WHERE [Id] = @Id;		
 END
