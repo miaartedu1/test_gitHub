@@ -1,9 +1,10 @@
-CREATE PROCEDURE [dbo].[sp_Persons_Insert]
+CREATE PROCEDURE [dbo].[st_Persons_Insert]
 	@id int = 0, --Идентификатор лица
 	@Surname nvarchar(50),
 	@Name nvarchar(50),
 	@Patronymic nvarchar(50) = NULL,
-	@DateOfBirth date
+	@DateOfBirth date,
+	@Phone varchar(15) = NULL	
 AS
 Begin
 	SET NOCOUNT ON;
@@ -13,11 +14,13 @@ Begin
 					[Surname],
 					[Name],
 					[Patronymic],
-					[DateOfBirth])
+					[DateOfBirth],
+					[Phone])
 		Values
 						(@Id,
 						@Surname,
 						@Name,
 						@Patronymic,
-						@DateOfBirth);
+						@DateOfBirth,
+						@Phone);
 END

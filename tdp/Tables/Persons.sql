@@ -4,9 +4,10 @@
     [Surname] NVARCHAR(50) NOT NULL, 
     [Name] NVARCHAR(50) NOT NULL, 
     [Patronymic] VARCHAR(50) NULL, 
-    [DateCorrection] DATETIME NOT NULL Constraint [DF_Persons_DateCorrection]  DEFAULT (getdate())
+    [DateCorrection] DATETIME NOT NULL Constraint [DF_Persons_DateCorrection]  DEFAULT (getdate()),
     [DateOfBirth] DATE NOT NULL, 
-    [DateInput] DATETIME NULL Constraint [DF_Persons_DateInput] Default (getdate())
+    [DateInput] DATETIME NULL Constraint [DF_Persons_DateInput] Default (getdate()), 
+    [Phone] VARCHAR(15) NULL
 )
 
 GO
@@ -81,3 +82,12 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'Persons',
     @level2type = N'COLUMN',
     @level2name = N'DateCorrection'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Номер телефона',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'Persons',
+    @level2type = N'COLUMN',
+    @level2name = N'Phone'
