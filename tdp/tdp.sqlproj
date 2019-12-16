@@ -63,6 +63,7 @@
     <Build Include="Stored Procedures\sp_Persons_Select.sql" />
     <Build Include="Stored Procedures\st_Person_Insert.sql" />
     <Build Include="Tables\Persons.sql" />
+    <Build Include="Stored Procedures\st_Person_Update.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="tdp.refactorlog" />
